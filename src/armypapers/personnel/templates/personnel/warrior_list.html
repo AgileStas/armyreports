@@ -1,0 +1,25 @@
+<h1>Особовий склад</h1>
+<body>
+{% if object_list|length == 0 %}
+	<p>Поки нема військовослужбовців</p>
+{% else %}
+<table>
+	<tr>
+		<th>№</th>
+		<th>Звання</th>
+		<th>ПІП</th>
+		<th>Номер телефону</th>
+		<th>Посада</th>
+	</tr>
+{% for warrior in object_list %}
+	<tr>
+		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.list_number }}</a></td>
+		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.military_rank }}</a></td>
+		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.family_name }} {{ warrior.first_name }}</a></td>
+		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.phone_number }}</a></td>
+		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.military_state }}</a></td>
+	</tr>
+{% endfor %}
+{% endif %}
+</table>
+</body>

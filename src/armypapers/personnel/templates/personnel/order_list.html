@@ -1,0 +1,8 @@
+<h1>Накази</h1>
+</ul>
+{% for order in object_list %}
+	<li>Наказ №{{ order.number }} від {{ order.date|date }}</li>
+{% empty %}
+	<li>Поки нема наказів</li>
+{% endfor %}
+</ul>

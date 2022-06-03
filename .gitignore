@@ -1,1 +1,6 @@
 src/armypapers/db.sqlite3
+**/__pycache__
+reports/bin/
+reports/lib/
+reports/lib64
+src/armypapers/personnel/migrations/
