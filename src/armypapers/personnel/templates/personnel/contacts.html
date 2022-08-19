@@ -1,0 +1,23 @@
+<h1>Контакти та дати народження військовослужбовців роти КДБ в/ч А7047</h1>
+<body>
+{% if object_list|length == 0 %}
+	<p>Поки нема військовослужбовців</p>
+{% else %}
+<table>
+	<tr>
+		<th>ПІП</th>
+		<th>Дата народження</th>
+		<th>Номер телефону</th>
+		<th>Позивний</th>
+	</tr>
+{% for warrior in object_list %}
+	<tr>
+		<td>{{ warrior.family_name }} {{ warrior.first_name }}</td>
+		<td>{{ warrior.birth_date|date:"Y-m-d" }}</td>
+		<td>{{ warrior.phone_number }}</td>
+		<td>{{ warrior.call_sign }}</td>
+	</tr>
+{% endfor %}
+</table>
+{% endif %}
+</body>

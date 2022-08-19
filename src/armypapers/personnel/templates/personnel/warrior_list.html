@@ -10,6 +10,7 @@
 		<th>ПІП</th>
 		<th>Номер телефону</th>
 		<th>Посада</th>
+		<th>Дата народження</th>
 	</tr>
 {% for warrior in object_list %}
 	<tr>
@@ -18,8 +19,9 @@
 		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.family_name }} {{ warrior.first_name }}</a></td>
 		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.phone_number }}</a></td>
 		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.military_state }}</a></td>
+		<td><a href="../warrior/{{warrior.pk}}">{{ warrior.birth_date|date:"Y-m-d" }}</a></td>
 	</tr>
 {% endfor %}
-{% endif %}
 </table>
+{% endif %}
 </body>
