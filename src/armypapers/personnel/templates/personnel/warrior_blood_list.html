@@ -5,27 +5,27 @@
 {% else %}
 <table>
 	<tr>
-		<th>№</th>
-		<th>Звання</th>
+		<!-- <th>№</th> -->
 		<th>ПІП</th>
-		<th>Особистий номер</th>
+		<th>Звання</th>
 		<th>Група крові</th>
-		<th>Позивний</th>
+		<th>Особистий номер</th>
+		<!-- <th>Позивний</th>
 		<th>Розмір взуття</th>
 		<th>Розмір голови</th>
-		<th>Розмір одягу</th>
+		<th>Розмір одягу</th> -->
 	</tr>
 {% for warrior in object_list %}
 	<tr>
-		<td>{{ warrior.list_number }}</td>
-		<td>{{ warrior.military_rank }}</td>
-		<td>{{ warrior.family_name }} {{ warrior.first_name }}</td>
-		<td>{{ warrior.id_number }}</td>
+		<!-- <td>{{ forloop.counter }}</td> -->
+		<td>{{ warrior.person.full_name }}</td>
+		<td>{{ warrior.m_rank }}</td>
 		<td>{{ warrior.blood_group }}</td>
-		<td>{{ warrior.call_sign }}</td>
+		<td>{{ warrior.id_number }}</td>
+		<!-- <td>{{ warrior.call_sign }}</td>
 		<td>{{ warrior.foot_size }}</td>
 		<td>{{ warrior.head_size }}</td>
-		<td>{{ warrior.wear_size }}</td>
+		<td>{{ warrior.wear_size }}</td> -->
 	</tr>
 {% endfor %}
 </table>

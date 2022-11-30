@@ -11,8 +11,8 @@
 	</tr>
 {% for warrior in object_list %}
 	<tr>
-		<td>{{ warrior.family_name }} {{ warrior.first_name }}</td>
-		<td>{{ warrior.birth_date|date:"Y-m-d" }}</td>
+		<td>{{ warrior.person.full_name }}</td>
+		<td>{{ warrior.person.birth_date|date:"Y-m-d" }}</td>
 		<td>{{ warrior.id_number }}</td>
 	</tr>
 {% endfor %}

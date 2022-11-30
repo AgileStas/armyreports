@@ -20,9 +20,9 @@
 	</tr>
 {% for weapon in object_list %}
 	<tr>
-		<td>{{ weapon.warrior.list_number }}</td>
-		<td>{{ weapon.warrior.military_rank }}</td>
-		<td>{{ weapon.warrior.family_name }} {{ weapon.warrior.first_name }}</td>
+		<td>{{ forloop.counter }}</td>
+		<td>{{ weapon.warrior.m_rank.name }}</td>
+		<td>{{ weapon.warrior.person.full_name }}</td>
 		<td>{{ weapon.weapon.wmodel}}</td>
 		<td>{{ weapon.wnumber }}</td>
 		<td>{{ weapon.wyear }}</td>
@@ -30,7 +30,7 @@
 		<td>{{ weapon.ammo_amount }}</td>
 		<td>---</td>
 		<td>---</td>
-		<td>{{ weapon.doctype }}<br/>{{ weapon.document }}</td>
+		<td>{{ weapon.w_doc.d_type }}<br/>{{ weapon.w_doc.number }}</td>
 		<td></td>
 	</tr>
 {% endfor %}

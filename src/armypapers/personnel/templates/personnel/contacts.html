@@ -6,16 +6,14 @@
 <table>
 	<tr>
 		<th>ПІП</th>
-		<th>Дата народження</th>
-		<th>Номер телефону</th>
 		<th>Позивний</th>
+		<th>Номер телефону</th>
 	</tr>
-{% for warrior in object_list %}
+{% for position in object_list %}
 	<tr>
-		<td>{{ warrior.family_name }} {{ warrior.first_name }}</td>
-		<td>{{ warrior.birth_date|date:"Y-m-d" }}</td>
-		<td>{{ warrior.phone_number }}</td>
-		<td>{{ warrior.call_sign }}</td>
+		<td>{{ position.position.person.full_name }}</td>
+		<td>{{ position.position.call_sign }}</td>
+		<td>{{ position.position.person.phone_number }}</td>
 	</tr>
 {% endfor %}
 </table>

@@ -7,6 +7,7 @@
 	<tr>
 		<th>№</th>
 		<th>ПІП</th>
+		<th>Дата народження</th>
 		<th>Військовий квиток</th>
 		<th>Дата видачі</th>
 		<th>Ким виданий</th>
@@ -17,11 +18,12 @@
 	</tr>
 {% for warrior in object_list %}
 	<tr>
-		<td>{{ warrior.list_number }}</td>
-		<td>{{ warrior.family_name }} {{ warrior.first_name }}</td>
-		<td>{{ warrior.military_idcard }}</td>
-		<td>{{ warrior.military_iddate|date:"Y-m-d" }}</td>
-		<td>{{ warrior.military_idissued }}</td>
+		<td>{{ forloop.counter }}</td>
+		<td>{{ warrior.person.full_name }}</td>
+		<td>{{ warrior.person.birth_date|date:"Y-m-d" }}</td>
+		<td>{{ warrior.wid_military.number }}</td>
+		<td>{{ warrior.wid_military.issue_date|date:"Y-m-d" }}</td>
+		<td>{{ warrior.wid_military.issue_org }}</td>
 		<td>{{ warrior.education_type }}</td>
 		<td>{{ warrior.education_year }}</td>
 		<td>{{ warrior.education_speciality }}</td>
